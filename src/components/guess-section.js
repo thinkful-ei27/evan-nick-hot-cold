@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import Feedback from './feedback';
 import GuessForm from './guess-form';
 // import store from './store';
-import {makeGuess} from '../actions';
-
+import { makeGuess } from '../actions';
 
 function GuessSection(props) {
-  const { feedback, guessCount } = props;
+  const { feedback, guesses } = props;
+  const guessCount = guesses.length;
   return (
     <section aria-label="Guess section" aria-describedby="feedback">
       <Feedback feedback={feedback} guessCount={guessCount} />
@@ -16,11 +16,11 @@ function GuessSection(props) {
   );
 }
 
-const mapStatetoProp = state => {
+const mapStateToProps = state => {
   return {
     guesses: state.guesses,
     feedback: state.feedback
-  }
+  };
 };
 
-export default connect(mapStatetoProp)(GuessSection);
+export default connect(mapStateToProps)(GuessSection);
