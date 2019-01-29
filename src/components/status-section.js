@@ -1,10 +1,12 @@
 import React from 'react';
-
+import {connect} from 'react-redux';
 import GuessList from './guess-list';
 import GuessCount from './guess-count';
 import AuralStatus from './aural-status';
+import {makeGuess, generateAuralUpdate} from '../actions';
 
-export default function StatusSection(props) {
+
+function StatusSection(props) {
   const { guesses, auralStatus } = props;
   const guessCount = guesses.length;
 
@@ -16,3 +18,12 @@ export default function StatusSection(props) {
     </section>
   );
 }
+
+function mapStatetoProps(state){
+  return {
+    guesses: state.guesses,
+    auralStatus: state.auralStatus
+  }
+};
+
+export default connect(mapStatetoProps)(StatusSection);
