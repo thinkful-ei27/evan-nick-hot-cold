@@ -6,7 +6,7 @@ export const restartGame = () => {
 };
 
 export const MAKE_GUESS = 'MAKE_GUESS';
-export const makeGuess = (guess) => {
+export const makeGuess = guess => {
   return {
     type: MAKE_GUESS,
     guess
@@ -14,9 +14,9 @@ export const makeGuess = (guess) => {
 };
 
 export const GENERATE_AURAL_UPDATE = 'GENERATE_AURAL_UPDATE';
-export const generateAuralUpdate = () => {
+export const generateAuralUpdate = status => {
   return {
-    type: GENERATE_AURAL_UPDATE
-  }
+    type: GENERATE_AURAL_UPDATE,
+    status
+  };
 };
-

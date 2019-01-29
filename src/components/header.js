@@ -1,7 +1,7 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import TopNav from './top-nav';
-import {generateAuralUpdate, restartGame} from '../actions';
+import { generateAuralUpdate, restartGame } from '../actions';
 import './header.css';
 
 function Header(props) {
@@ -16,4 +16,4 @@ function Header(props) {
   );
 }
 
-export default connect()(Header)
+export default connect()(Header);
